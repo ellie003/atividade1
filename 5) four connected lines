@@ -1,0 +1,28 @@
+import pyxel
+
+class App():
+
+
+    def __init__(self):
+        pyxel.init(200,200, title='app')
+        self.x = 0
+        self.y = 0
+        pyxel.run(self.update, self.draw)
+
+
+
+    def update(self):
+       self.x= pyxel.mouse_x
+       self.y = pyxel.mouse_y
+
+    def draw(self):
+        pyxel.cls(0)
+        pyxel.line(self.x, self.y, 0, 0, 2)
+        pyxel.line(self.x, self.y, 200, 200, 2)
+        pyxel.line(self.x, self.y, 0, 200, 2)
+        pyxel.line(self.x, self.y, 200, 0, 2)
+        pyxel.mouse(visible=True)
+
+
+
+App()
