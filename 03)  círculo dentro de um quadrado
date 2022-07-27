@@ -1,0 +1,27 @@
+import pyxel
+
+
+class App():
+    def __init__(self):
+        pyxel.init(200, 200, title="app")
+        self.x = 0
+        self.y = 0
+
+        pyxel.run(self.update, self.draw)
+
+    
+    def update(self):
+        
+        self.x = pyxel.mouse_x
+        self.y = pyxel.mouse_y 
+
+
+    def draw(self):
+
+        pyxel.cls(0)
+        pyxel.circ(self.x + 31, self.y+ 32, 20 , 10)
+        pyxel.rectb(self.x , self.y , 60, 60, 11)
+        pyxel.mouse(visible=True)
+        
+
+App()
